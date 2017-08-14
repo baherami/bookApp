@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Route } from 'react-router-dom';
+import {Route,Link } from 'react-router-dom';
 import './App.css';
 import Shelf from './shelf'
 import * as BooksAPI from './BooksAPI'
@@ -30,6 +30,10 @@ class App extends Component {
         <Route exact path="/" render={()=>(
           <div>
             {Object.keys(currentBookStatus).map(s=>(<Shelf onBookChange={this.moveBooktoAnotherShelf} key={s} shelfName={s} shelfBooks={this.state.books}/>))}
+
+            <Link to="/search" className="open-search">
+              <p>Add a book</p>
+            </Link>
 
           </div>
         )}/>

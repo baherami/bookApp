@@ -4,6 +4,7 @@ class Book extends Component{
   state ={
     showInfo:false,
     showSetting:false
+
   }
 
   showHideExtraInfo=()=>{
@@ -43,15 +44,16 @@ class Book extends Component{
 
     if(this.state.showInfo){
         bookExtraInfo=
-        <div className="book-info">
-          <div  onClick={()=>this.showHideExtraInfo()}><h2>&#x24E7;</h2></div>
+        <div className="book-shelf-info-modal">
+        <div className="book-shelf-content">
+          <span className="close"   onClick={()=>this.showHideExtraInfo()}>&times;</span>
+
           {Object.keys(bookInfo).map(bi=><p key={bi}><b>{bi}: </b>{JSON.stringify(bookInfo[bi])}</p>)}
           </div>
-
+        </div>
       }else{
         bookExtraInfo=
-        <div className="book-shelf-info">
-          <div  onClick={()=>this.showHideExtraInfo()}><h2> &#x1F6C8;</h2></div>
+        <div className="book-shelf-info"   onClick={()=>this.showHideExtraInfo()}>
         </div>
       }
     if(this.state.showSetting){
@@ -70,18 +72,22 @@ class Book extends Component{
       <div className="book-shelf-changer" onClick={()=>this.showSettingOptions()}>
         </div>
     }
+    console.log(bookInfo)
+    //<img src= alt={'Book: '+bookInfo.title} title={bookInfo.shelf+' : '+bookInfo.title}></img>
     return(
       <li>
       <div className="book" >
         <div className="book-top">
-        <div className="book-cover">
-          <img src={bookInfo.imageLinks.smallThumbnail} alt={'Book: '+bookInfo.title} title={bookInfo.shelf+' : '+bookInfo.title}></img>
+        <div className="book-cover" style={{"width":"100%","height":"100%", "background-repeat": "no-repeat", backgroundImage:`url(${bookInfo.imageLinks.thumbnail})`}}>
         </div>
+                            {bookSettingOptions}
 
                               {bookExtraInfo}
-                              {bookSettingOptions}
 
         </div>
+        <div className="book-title">{bookInfo.title}</div>
+                          <div className="book-authors">{bookInfo.authors}</div>
+
       </div>
     </li>
 )  }
