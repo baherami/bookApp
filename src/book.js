@@ -49,7 +49,7 @@ class Book extends Component{
     if(this.state.showSetting){
       bookSettingOptions=
       <div className="book-shelf-changer">
-        <select id="selector" defaultValue={bookInfo.shelf} onChange={(event)=>moveBook(event,bookInfo)}>
+        <select id="selector" defaultValue={bookInfo.shelf?bookInfo.shelf:"none"} onChange={(event)=>moveBook(event,bookInfo)}>
           <option value="none" disabled >Select Shelf</option>
           {Object.keys(currentBookStatus).map(cbs=><option key={cbs} value={cbs}>{currentBookStatus[cbs]}</option>)}
         </select>
