@@ -19,16 +19,16 @@ class Book extends Component{
     JSON.stringify(obj[key])
   }
   render(){
-    var bookInfo=this.props.info
-    var bookExtraInfo,bookSettingOptions
+    const bookInfo=this.props.info
+    let  bookExtraInfo,bookSettingOptions
     const currentBookStatus={
       currentlyReading:'Currently Reading',
       wantToRead:'Want to Read',
       read:'Read'
     }
-    var moveBook=(event,book)=>{
+    let moveBook=(event,book)=>{
       event.preventDefault();
-      var newShelf= document.getElementById("selector").value;
+      let newShelf= document.getElementById("selector").value;
       this.showSettingOptions();
       this.props.onBookChange(book,newShelf);
       console.log('moveBook')

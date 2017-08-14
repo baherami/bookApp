@@ -20,9 +20,9 @@ class Search extends Component{
     console.log('in search');
   }
   render(){
-    var onBookChange=this.props.onBookChange;
-    var data=this.state.query
-    var searchResult
+    const onBookChange=this.props.onBookChange;
+    let data=this.state.query
+    let searchResult
     if(data){
       searchResult=data.map(b=><Book key={b.id} info={b} onBookChange={onBookChange}/>)
     }
