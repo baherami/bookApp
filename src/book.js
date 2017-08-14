@@ -9,12 +9,12 @@ class Book extends Component{
     this.setState((state)=>({
       showInfo:!state.showInfo
     }))
-    }
+  }
   showSettingOptions=()=>{
-      this.setState((state)=>({
-        showSetting:!state.showSetting
-      }))
-      }
+    this.setState((state)=>({
+      showSetting:!state.showSetting
+    }))
+  }
   showValue=(obj,key)=>{
     JSON.stringify(obj[key])
   }
@@ -22,30 +22,30 @@ class Book extends Component{
     var bookInfo=this.props.info
     var bookExtraInfo,bookSettingOptions
     const currentBookStatus={
-              currentlyReading:'Currently Reading',
-              wantToRead:'Want to Read',
-              read:'Read'
+      currentlyReading:'Currently Reading',
+      wantToRead:'Want to Read',
+      read:'Read'
     }
     var moveBook=(event,book)=>{
-        event.preventDefault();
-        var newShelf= document.getElementById("selector").value;
-        this.showSettingOptions();
-        this.props.onBookChange(book,newShelf);
-        console.log('moveBook')
-      }
+      event.preventDefault();
+      var newShelf= document.getElementById("selector").value;
+      this.showSettingOptions();
+      this.props.onBookChange(book,newShelf);
+      console.log('moveBook')
+    }
     if(this.state.showInfo){
-        bookExtraInfo=
-        <div className="book-shelf-info-modal">
-          <div className="book-shelf-content">
-            <span className="close"   onClick={()=>this.showHideExtraInfo()}>&times;</span>
-            {Object.keys(bookInfo).map(bi=><p key={bi}><b>{bi}: </b>{JSON.stringify(bookInfo[bi])}</p>)}
-          </div>
+      bookExtraInfo=
+      <div className="book-shelf-info-modal">
+        <div className="book-shelf-content">
+          <span className="close"   onClick={()=>this.showHideExtraInfo()}>&times;</span>
+          {Object.keys(bookInfo).map(bi=><p key={bi}><b>{bi}: </b>{JSON.stringify(bookInfo[bi])}</p>)}
         </div>
-      }else{
-        bookExtraInfo=
-        <div className="book-shelf-info"   onClick={()=>this.showHideExtraInfo()}>
-        </div>
-      }
+      </div>
+    }else{
+      bookExtraInfo=
+      <div className="book-shelf-info"   onClick={()=>this.showHideExtraInfo()}>
+      </div>
+    }
     if(this.state.showSetting){
       bookSettingOptions=
       <div className="book-shelf-changer">
@@ -69,12 +69,12 @@ class Book extends Component{
             {bookSettingOptions}
             {bookExtraInfo}
           </div>
-        <div className="book-title">
-          {bookInfo.title}
-        </div>
-        <div className="book-authors">
-          {bookInfo.authors}
-        </div>
+          <div className="book-title">
+            {bookInfo.title}
+          </div>
+          <div className="book-authors">
+            {bookInfo.authors}
+          </div>
         </div>
       </li>
     )

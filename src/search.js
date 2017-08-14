@@ -28,18 +28,18 @@ class Search extends Component{
     }
     return(
       <div className="search-books">
-                <div className="search-books-bar">
-                  <Link className="close-search" to="/">Close</Link>
-                  <div className="search-books-input-wrapper">
-                    <input type="text" onInput={this.search} name="search" placeholder="Search by title or author"/>
-                  </div>
-                </div>
-                <div className="search-books-results">
-                  <ol className="books-grid">
-                    {searchResult}
-                  </ol>
-                </div>
-              </div>
-  )}
-}
-export default Search;
+        <div className="search-books-bar">
+          <Link className="close-search" to="/">Close</Link>
+          <div className="search-books-input-wrapper">
+            <input type="text" onInput={this.search} name="search" placeholder="Search by title or author"/>
+          </div>
+        </div>
+        <div className="search-books-results">
+          <ol className="books-grid">
+            {searchResult}
+          </ol>
+        </div>
+      </div>
+    )}
+  }
+  export default Search;

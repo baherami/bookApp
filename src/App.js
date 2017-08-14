@@ -9,10 +9,10 @@ class App extends Component {
     books:[]
   }
   componentDidMount() {
-      BooksAPI.getAll().then((data) => this.setState({
-        books:data
-      }))
-    }
+    BooksAPI.getAll().then((data) => this.setState({
+      books:data
+    }))
+  }
   moveBooktoAnotherShelf=(book,shelf)=>{
     BooksAPI.update(book,shelf).then(BooksAPI.getAll().then((data) => this.setState({
       books:data
@@ -21,9 +21,9 @@ class App extends Component {
   }
   render() {
     const currentBookStatus={
-              currentlyReading:'Currently Reading',
-              wantToRead:'Want to Read',
-              read:'Read'
+      currentlyReading:'Currently Reading',
+      wantToRead:'Want to Read',
+      read:'Read'
     }
     return (
       <div className="App">
@@ -32,15 +32,15 @@ class App extends Component {
             {Object.keys(currentBookStatus).map(s=>(<Shelf onBookChange={this.moveBooktoAnotherShelf} key={s} shelfName={s} shelfBooks={this.state.books}/>))}
 
             <Link to="/search" className="open-search">
-              <p>Add a book</p>
-            </Link>
+            <p>Add a book</p>
+          </Link>
 
-          </div>
-        )}/>
-        <Route path="/search" render={()=><Search onBookChange={this.moveBooktoAnotherShelf}/>}/>
-      </div>
-    );
-  }
+        </div>
+      )}/>
+      <Route path="/search" render={()=><Search onBookChange={this.moveBooktoAnotherShelf}/>}/>
+    </div>
+  );
+}
 }
 
 export default App;
