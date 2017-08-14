@@ -7,8 +7,7 @@ class Shelf extends Component{
   }
   render(){
     const {onBookChange,shelfName,shelfBooks}=this.props
-    const filteredBooks=shelfBooks
-      .filter(e=>e.shelf===shelfName)
+    const filteredBooks=shelfBooks.filter(e=>e.shelf===shelfName)
       //console.log(filteredBooks)
     return(
       <div className="list-books-content">
@@ -21,8 +20,8 @@ class Shelf extends Component{
                     </ol>
                   </div>
                 </div>
+        </div>
       </div>
-    </div>
     )
   }
 }

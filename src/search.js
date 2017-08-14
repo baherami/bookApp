@@ -18,7 +18,6 @@ class Search extends Component{
     })
     console.log(searchTerm);
     console.log('in search');
-
   }
   render(){
     var onBookChange=this.props.onBookChange;
@@ -26,7 +25,6 @@ class Search extends Component{
     var searchResult
     if(data){
       searchResult=data.map(b=><Book key={b.id} info={b} onBookChange={onBookChange}/>)
-
     }
     return(
       <div className="search-books">
@@ -34,7 +32,6 @@ class Search extends Component{
                   <Link className="close-search" to="/">Close</Link>
                   <div className="search-books-input-wrapper">
                     <input type="text" onInput={this.search} name="search" placeholder="Search by title or author"/>
-
                   </div>
                 </div>
                 <div className="search-books-results">
@@ -43,12 +40,6 @@ class Search extends Component{
                   </ol>
                 </div>
               </div>
-
-
-
-
-
-  )
-  }
+  )}
 }
 export default Search;
