@@ -8,4 +8,5 @@
 - Backend is developed by Udacity and the interface is accebile via BoookAPI file.
 
 ## installation
-- use npm install
+1- npm install
+2- npm start
