@@ -64,7 +64,7 @@ class Book extends Component{
     if(bookInfo.imageLinks){ //Some results do not include imageLinks
       imageURL=bookInfo.imageLinks.thumbnail
     }else{
-      imageURL='https://thumb.ibb.co/nxmzWa/Image_not_found.gif' //an image for the case that thumbnail is not available
+      imageURL='https://thumb.ibb.co/nxmzWa/Image_not_found.gif' //an image for the case that thumbnail is not available. Search journey or User's Journey for such an exception.
     }
     return(
       <li>
