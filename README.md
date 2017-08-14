@@ -7,3 +7,5 @@
 - The project is based on a template suggestion by Udacity.
 - Backend is developed by Udacity and the interface is accebile via BoookAPI file.
 
+## installation
+- use npm install
