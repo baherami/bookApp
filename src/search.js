@@ -2,7 +2,7 @@ import * as BooksAPI from'./BooksAPI'
 import React, { Component } from 'react';
 import {Link } from 'react-router-dom';
 import Book from './book'
-import serializeForm from 'form-serialize'
+//import serializeForm from 'form-serialize'
 class Search extends Component{
   state = {
     query:''
