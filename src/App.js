@@ -30,7 +30,6 @@ class App extends Component {
         <Route exact path="/" render={()=>(
           <div>
             {Object.keys(currentBookStatus).map(s=>(<Shelf onBookChange={this.moveBooktoAnotherShelf} key={s} shelfName={s} shelfBooks={this.state.books}/>))}
-
             <Link to="/search" className="open-search">
             <p>Add a book</p>
           </Link>

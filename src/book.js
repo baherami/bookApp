@@ -59,12 +59,18 @@ class Book extends Component{
       <div className="book-shelf-changer" onClick={()=>this.showSettingOptions()}>
       </div>
     }
-    console.log(bookInfo)
+    //console.log(bookInfo)
+    let imageURL
+    if(bookInfo.imageLinks){ //Some results do not include imageLinks
+      imageURL=bookInfo.imageLinks.thumbnail
+    }else{
+      imageURL='https://thumb.ibb.co/nxmzWa/Image_not_found.gif' //an image for the case that thumbnail is not available
+    }
     return(
       <li>
         <div className="book" >
           <div className="book-top">
-            <div className="book-cover" style={{"width":"100%","height":"100%", "background-repeat": "no-repeat", backgroundImage:`url(${bookInfo.imageLinks.thumbnail})`}}>
+            <div className="book-cover" style={{"width":"100%","height":"100%", "backgroundRepeat": "no-repeat", backgroundImage:`url(${imageURL})`}}>
             </div>
             {bookSettingOptions}
             {bookExtraInfo}

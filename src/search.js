@@ -22,10 +22,12 @@ class Search extends Component{
   render(){
     const onBookChange=this.props.onBookChange;
     let data=this.state.query
-    let searchResult
-    if(data){
+    let searchResult=""
+    if ((data) &&!(data.error)){ // checking if result from server does not contain error
+      console.log(JSON.stringify(data))
       searchResult=data.map(b=><Book key={b.id} info={b} onBookChange={onBookChange}/>)
     }
+
     return(
       <div className="search-books">
         <div className="search-books-bar">
