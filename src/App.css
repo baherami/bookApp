@@ -153,14 +153,13 @@ body, .app {
   background-position: center;
   background-size: 20px;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-}
-.selector {
-  z-index: 1;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
+  z-index: 4;
   cursor: pointer;
 }
+select {
+  cursor: pointer;
+}
+
 /*from w3 examples*/
 .book-shelf-info {
   position: absolute;
@@ -180,7 +179,7 @@ body, .app {
 .book-shelf-info-modal {
   display:block; /* Hidden by default */
   position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
+  z-index: 6; /* Sit on top */
   padding-top: 100px; /* Location of the box */
   left: 0;
   top: 0;
@@ -215,6 +214,9 @@ body, .app {
 .book-cover {
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
   background: #eee;
+  width:100%;
+  height:100%;
+  backgroundRepeat: no-repeat;
 }
 .book-cover-title {
   padding: 20px 10px 0;
