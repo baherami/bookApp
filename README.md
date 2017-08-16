@@ -21,4 +21,4 @@ The current implementation of book component might call the get API and before t
 
 ## License
 This app is licensed under the
-[MIT License](bookapp/LICENSE.md).
+[MIT License](https://github.com/baherami/bookapp/blob/master/LICENSE.md).
