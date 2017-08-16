@@ -11,5 +11,14 @@
 1. `npm install`
 2. `npm start`
 
-## Search Limits
+## Known issues
+
+- ### Search Limits
 The API used for search is limited to a few keywords. Please check [search.md](reactnd-project-myreads-starter/SEARCH_TERMS.md) for the latest keywords.
+
+- ### Warnings on dismounted components
+The current implementation of book component might call the get API and before the result is ready, the same component might be removed dynamically. This will cause many warnings on Search component as the  keyword for search is changing.  
+
+## License
+This app is licensed under the
+[MIT License](bookapp/LICENSE.md).
