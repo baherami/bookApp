@@ -7,6 +7,9 @@
 - The project is based on a template suggestion by Udacity.
 - Backend is developed by Udacity and the interface is accebile via BoookAPI file.
 
-## installati.n
-1. npm instal.
-2. npm start
+## Installation
+1. `npm install`
+2. `npm start`
+
+## Search Limits
+The API used for search is limited to a few keywords. Please check [search.md](reactnd-project-myreads-starter/SEARCH_TERMS.md) for the latest keywords.
