@@ -14,7 +14,7 @@
 ## Known issues
 
 - ### Search Limits
-The API used for search is limited to a few keywords. Please check [search.md](reactnd-project-myreads-starter/SEARCH_TERMS.md) for the latest keywords.
+The API used for search is limited to a few keywords. Please check [search.md](https://raw.githubusercontent.com/udacity/reactnd-project-myreads-starter/master/SEARCH_TERMS.md) for the latest keywords.
 
 - ### Warnings on dismounted components
 The current implementation of book component might call the get API and before the result is ready, the same component might be removed dynamically. This will cause many warnings on Search component as the  keyword for search is changing.  
