@@ -10,8 +10,7 @@ class Shelf extends Component{
     }
 
     return(
-      <div className="list-books-content">
-        <div>
+
           <div className="bookshelf">
             <h2 className="bookshelf-title">{shelfName}</h2>
             <div className="bookshelf-books">
@@ -20,8 +19,7 @@ class Shelf extends Component{
               </ol>
             </div>
           </div>
-        </div>
-      </div>
+        
     )
   }
 }

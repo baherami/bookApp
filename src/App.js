@@ -1,17 +1,12 @@
 import React, { Component } from 'react';
 import {Route,Link } from 'react-router-dom';
 import './App.css';
-import Shelf from './shelf'
+import Library from './library'
 import * as BooksAPI from './BooksAPI'
 import Search from './search'
 class App extends Component {
   state={
     books:[]
-  }
- currentBookStatus={
-    currentlyReading:'Currently Reading',
-    wantToRead:'Want to Read',
-    read:'Read'
   }
 
   componentDidMount() {
@@ -37,7 +32,7 @@ class App extends Component {
         <div className="App">
           <Route exact path="/" render={()=>(
             <div>
-              {Object.keys(this.currentBookStatus).map(s=>(<Shelf onBookChange={this.moveBooktoAnotherShelf} key={s} shelfName={s} shelfBooks={this.state.books}/>))}
+              <Library onBookChange={this.moveBooktoAnotherShelf}  books={this.state.books}/>
               <Link to="/search" className="open-search">
               <p>Add a book</p>
             </Link>
